@@ -1,0 +1,17 @@
+package pms.a01_mvc.a03_dao;
+
+import java.util.ArrayList;
+
+import pms.a02_vo.Notice;
+
+public interface NoticeDao {
+public ArrayList<Notice> getNotice(Notice sch);
+	
+	public Notice getNoticenum(int Notice_list_num);
+	
+	public void uptNotice(Notice upt);
+	
+	public void delNotice(int Notice_list_num);
+	
+	public void insertNotice(Notice ins);
+}

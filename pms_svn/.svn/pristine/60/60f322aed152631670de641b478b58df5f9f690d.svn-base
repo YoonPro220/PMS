@@ -1,0 +1,41 @@
+package pms.a01_mvc.a02_service;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import pms.a01_mvc.a03_dao.MeetingDao;
+import pms.a02_vo.Meeting;
+
+@Service
+public class MeetingService {
+	@Autowired
+	private MeetingDao dao;
+	
+		// 회의일지 전체 리스트
+		public ArrayList<Meeting> getMeetingList(Meeting sch){
+			if(sch.getWriter()==null) sch.setWriter("");
+			return dao.getMeetingList(sch);
+		}
+		
+		// 회의일지 상세
+		public Meeting getMeetingnum(int meeting_list_num) {
+			return dao.getMeetingnum(meeting_list_num);
+		}
+		
+		// 회의일지 수정
+		public void uptMeeting(Meeting upt) {
+			dao.uptMeeting(upt);
+		}
+		
+		// 회의일지 삭제
+		public void delMeeting(int meeting_list_num) {
+			dao.delMeeting(meeting_list_num);
+		}
+		
+		// 회의일지 등록
+		public void insertMeeting(Meeting ins) {
+			dao.insertMeeting(ins);
+		}
+}

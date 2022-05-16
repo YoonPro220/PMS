@@ -1,0 +1,25 @@
+package pms.a01_mvc.a02_service;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import pms.a01_mvc.a03_dao.MyjobDao;
+import pms.a02_vo.Myjob;
+
+@Service
+public class MyjobService {
+	
+	@Autowired
+	private MyjobDao dao;
+	
+	public ArrayList<Myjob> getMyjobList(Myjob sch){
+		
+		return dao.getMyjobList(sch);
+	}
+	
+	public Myjob getMyjobDetail(int myjob_list_num) {
+		return dao.getMyjobDetail(myjob_list_num);
+	}
+}

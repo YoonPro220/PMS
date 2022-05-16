@@ -1,0 +1,25 @@
+package pms.a01_mvc.a01_controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class DashboardController {
+	@Autowired
+	private DashboardController service;
+	
+	// http://localhost:5080/pms/dashboard.do
+	@RequestMapping("/dashboard.do")
+	public String dashboard() {
+		
+		
+		return "pageJsonReport";
+	}
+	
+	@RequestMapping("")
+	public String myjob2() {
+		return "";
+	}
+	
+}

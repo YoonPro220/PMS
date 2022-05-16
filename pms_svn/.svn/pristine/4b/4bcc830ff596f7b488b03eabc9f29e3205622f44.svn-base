@@ -1,0 +1,38 @@
+package pms.a01_mvc.a02_service;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import pms.a01_mvc.a03_dao.ProjectDao;
+import pms.a02_vo.Project;
+
+@Service
+public class ProjectService {
+	@Autowired
+	private ProjectDao dao;
+	
+	public ArrayList<Project> getProjectList(Project sch){
+		if(sch.getWriter()==null) sch.setWriter("");
+	
+		return dao.getProjectList(sch);
+	}
+	
+	public Project getProjectnum(int project_list_num) {
+		return dao.getProjectnum(project_list_num);
+	}
+	
+	public void uptPro(Project upt) {
+		dao.uptPro(upt);
+	}
+	
+	public void delPro(int project_list_num) {
+		dao.delPro(project_list_num);
+	}
+	
+	public void insertPro(Project ins) {
+		dao.insertPro(ins);
+	}
+	
+}

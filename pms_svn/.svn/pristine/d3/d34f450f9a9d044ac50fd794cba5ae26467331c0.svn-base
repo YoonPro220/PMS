@@ -1,0 +1,32 @@
+package pms.a01_mvc.a01_controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import pms.a01_mvc.a02_service.MainService;
+import pms.a02_vo.PmsMember;
+
+@Controller
+public class MainController {
+	
+	@Autowired
+	private MainService service;
+	
+	
+	// 마이페이지 화면 호출
+	// http://localhost:5080/pms/mypage.do
+	@GetMapping("/mypage.do")
+	public String mypage() {
+		return "WEB-INF\\views\\a24_mypage2.jsp";
+	}
+	//마이페이지 수정
+	@RequestMapping("/uptMypage.do")
+	public String uptMypage(PmsMember upt, Model d) {
+		d.addAttribute("proc","수정 완료");
+		service.updateMember(upt);
+		return "forward:/mypage.do";
+	}
+}

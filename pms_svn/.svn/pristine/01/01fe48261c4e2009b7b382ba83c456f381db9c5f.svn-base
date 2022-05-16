@@ -1,0 +1,60 @@
+package pms.a01_mvc.a01_controller;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import pms.a01_mvc.a02_service.NoticeService;
+import pms.a02_vo.Notice;
+import pms.a02_vo.Project;
+
+@Controller
+public class NoticeController {
+	
+	@Autowired
+	private NoticeService service;
+	
+	// http://localhost:5080/pms/notice.do
+	@RequestMapping("/notice.do")
+	public String notice(Notice sch, Model d) {
+		d.addAttribute("noticelist", service.getNotice(sch));
+		return "WEB-INF\\views\\a27_notice.jsp";
+	}
+	
+	@RequestMapping("/noticedetail.do")
+	public String getnoticenum(@RequestParam("notice_list_num") int notice_list_num, Model d) {		
+		d.addAttribute("notice", service.getNoticenum(notice_list_num));
+		return "WEB-INF\\views\\a28_noticedetail.jsp";
+	}
+	
+	@RequestMapping("/noticewrite.do")
+	public String noticewrite() {
+		return "WEB-INF\\views\\a29_noticewrite.jsp";
+	}
+	
+	
+	@RequestMapping("/uptNotice.do")
+	public String uptNotice(Notice upt, Model d) {
+		d.addAttribute("proc", "수정완료");
+		service.uptNotice(upt);
+		return "forward:/noticedetail.do";
+	}
+	
+	@RequestMapping("/delNotice.do")
+	public String delNotice(@RequestParam("notice_list_num") int notice_list_num, Model d){
+		d.addAttribute("proc", "삭제되었습니다");
+		service.delNotice(notice_list_num);
+		return "forward:/notice.do";
+	}
+	
+	@RequestMapping("/intsertNotice.do")
+	public String insertNotice(Notice ins, Model d) {
+		d.addAttribute("proc", "등록완료");
+		service.insertNotice(ins);
+		return "WEB-INF\\views\\a27_notice.jsp";
+	}
+	
+}

@@ -1,0 +1,20 @@
+package pms.a01_mvc.a02_service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import pms.a01_mvc.a03_dao.GanttDao;
+import pms.a02_vo.Ganttdata;
+
+@Service
+public class GanttService {
+	
+	@Autowired
+	private GanttDao dao;
+	
+	public List<Ganttdata> getGanttList(){
+		return dao.getGanttList();
+	}
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="pms.a01_mvc.a03_dao.ProjectDao">
+	
+	<select id="getProjectList" resultType="project" parameterType="project">
+		select *
+		from projectlist
+		where writer like '%' || #{writer} || '%'
+		ORDER BY project_list_num asc
+	</select>
+	
+	
+	<select id="getProjectnum" parameterType="int" resultType="project">
+		select *
+		from projectlist
+		where project_list_num=#{project_list_num}
+	</select> 
+	
+	
+	<update id = "uptPro" parameterType="project">
+		update projectlist
+		   set project_title = #{project_title},
+			   project_budget = #{project_budget},
+			   project_start = '#{project_start}',
+			   project_end = '#{project_end}',
+			   project_manager = #{project_manager},
+			   project_member = #{project_member}
+		 where project_list_num = #{project_list_num}	
+	</update>
+	 
+	
+	
+	
+	<delete id="delPro" parameterType="int">
+		delete 
+		from projectlist
+		where project_list_num=#{project_list_num}
+	</delete>
+	
+	
+	
+	
+	<insert id="insertPro" parameterType="project">
+		INSERT INTO projectlist
+		VALUES(mem_seq.nextval,#{id},#{pass},#{name},#{dname},#{email},#{phone},#{auth})
+	</insert>
+	
+
+	
+</mapper>

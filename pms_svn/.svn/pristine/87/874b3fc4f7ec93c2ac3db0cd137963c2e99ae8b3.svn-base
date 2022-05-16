@@ -1,0 +1,26 @@
+package pms.a01_mvc.a03_dao;
+
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Repository;
+
+import pms.a02_vo.MeetingList;
+
+@Repository
+public interface MeetingBoardDao {
+	// 회의일지 전체 리스트
+	public ArrayList<MeetingList> getMeetingList(MeetingList sch);
+	
+	// 회의일지 상세
+	public MeetingList getMeetingnum(int meeting_list_num);
+	
+	// 회의일지 수정
+	public void uptMeeting(MeetingList upt);
+	
+	// 회의일지 삭제
+	public void delMeeting(int meeting_list_num);
+	
+	// 회의일지 등록
+	public void insertMeeting(MeetingList ins);
+	
+}

@@ -1,0 +1,15 @@
+package pms.a01_mvc.a01_controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class OutputController {
+//	@Autowired
+//	private OutputService service;
+	
+	@RequestMapping("/outputList.do")
+	public String outputList() {
+		return "WEB-INF\\views\\a06_output.jsp";
+	}
+}

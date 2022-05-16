@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="member" type="pms.a02_vo.PmsMember"/>
+		<typeAlias alias="calendar" type="pms.a02_vo.Calendar"/>
+		<typeAlias alias="file" type="pms.a02_vo.FileVo"/> 
+		<typeAlias alias="fileInfo" type="pms.a02_vo.FileInfo"/> 
+
+		<typeAlias alias="workList" type="pms.a02_vo.WorkList"/> 
+		<typeAlias alias="meetingList" type="pms.a02_vo.MeetingList"/> 
+		<typeAlias alias="outputList" type="pms.a02_vo.OutputList"/> 
+		<typeAlias alias="projectList" type="pms.a02_vo.ProjectList"/> 
+		<typeAlias alias="myjobList" type="pms.a02_vo.MyjobList"/> 
+		<typeAlias alias="gantt" type="pms.a02_vo.Ganttdata"/>
+		
+	</typeAliases>
+	<mappers>
+		<mapper resource="resource/MemberMapper.xml"/>
+		<mapper resource="resource/LoginMapper.xml"/>
+		<mapper resource="resource/MainMapper.xml"/>
+		<mapper resource="resource/CalendarMapper.xml"/>
+		<mapper resource="resource/FileMapper.xml"/>
+		<mapper resource="resource/GanttMapper.xml"/>
+	</mappers>
+
+</configuration>

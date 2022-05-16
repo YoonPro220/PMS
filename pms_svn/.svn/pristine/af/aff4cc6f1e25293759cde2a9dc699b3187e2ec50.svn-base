@@ -1,0 +1,39 @@
+package pms.a01_mvc.a02_service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import pms.a01_mvc.a03_dao.GanttDao;
+import pms.a02_vo.Gantt;
+import pms.a02_vo.GanttList;
+import pms.a02_vo.Link;
+
+@Service
+public class GanttService {
+	
+	@Autowired
+	private GanttDao dao;
+
+	public GanttList getGantt(int project_list_num){
+		   GanttList glist = new GanttList();
+		   glist.setData(dao.getGantt(project_list_num));
+		   
+		   ArrayList<Gantt> list = dao.getGantt(project_list_num);
+		   glist.setData(list);
+		   
+		   ArrayList<Link> links = new ArrayList<Link>();
+		   for(Gantt gt : list) {
+			   links.addAll(dao.getLink(gt.getId()));
+		   }
+		   
+		   glist.setLinks(links);
+		   return glist;
+	}
+	
+	public List<Gantt> getGanttList(){
+		return dao.getGanttList(); 
+	}
+}

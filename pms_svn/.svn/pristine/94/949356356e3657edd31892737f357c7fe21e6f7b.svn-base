@@ -1,0 +1,8 @@
+package pms.a01_mvc.a02_service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class DashboardService {
+
+}

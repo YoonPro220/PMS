@@ -1,0 +1,23 @@
+package pms.a01_mvc.a03_dao;
+
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Repository;
+
+import pms.a02_vo.Project;
+
+@Repository
+public interface ProjectDao {
+	
+	
+	public ArrayList<Project> getProjectList(Project sch);
+	
+	public Project getProjectnum(int project_list_num);
+	
+	public void uptPro(Project upt);
+	
+	public void delPro(int project_list_num);
+	
+	public void insertPro(Project ins);
+	
+}

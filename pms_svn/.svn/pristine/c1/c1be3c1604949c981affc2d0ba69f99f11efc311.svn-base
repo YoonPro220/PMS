@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="member" type="pms.a02_vo.PmsMember"/>
+	</typeAliases>
+	<mappers>
+		<mapper resource="resource/MemberMapper.xml"/>
+		<mapper resource="resource/LoginMapper.xml"/>
+		<mapper resource="resource/MainMapper.xml"/>
+	</mappers>
+
+</configuration>

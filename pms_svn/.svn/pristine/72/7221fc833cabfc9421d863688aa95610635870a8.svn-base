@@ -1,0 +1,80 @@
+package pms.a02_vo;
+//pms.a02_vo.WorkList
+import java.util.Date;
+
+public class WorkList {
+	private int work_list_num;
+	private String work_name;
+	private String work_text;
+	private String project_name;
+	private String dname;
+	private String name;
+	private Date project_start;
+	private Date project_end;
+	public WorkList() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public WorkList(int work_list_num, String work_name, String work_text, String project_name, String dname,
+			String name, Date project_start, Date project_end) {
+		super();
+		this.work_list_num = work_list_num;
+		this.work_name = work_name;
+		this.work_text = work_text;
+		this.project_name = project_name;
+		this.dname = dname;
+		this.name = name;
+		this.project_start = project_start;
+		this.project_end = project_end;
+	}
+	public int getWork_list_num() {
+		return work_list_num;
+	}
+	public void setWork_list_num(int work_list_num) {
+		this.work_list_num = work_list_num;
+	}
+	public String getWork_name() {
+		return work_name;
+	}
+	public void setWork_name(String work_name) {
+		this.work_name = work_name;
+	}
+	public String getWork_text() {
+		return work_text;
+	}
+	public void setWork_text(String work_text) {
+		this.work_text = work_text;
+	}
+	public String getProject_name() {
+		return project_name;
+	}
+	public void setProject_name(String project_name) {
+		this.project_name = project_name;
+	}
+	public String getDname() {
+		return dname;
+	}
+	public void setDname(String dname) {
+		this.dname = dname;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Date getProject_start() {
+		return project_start;
+	}
+	public void setProject_start(Date project_start) {
+		this.project_start = project_start;
+	}
+	public Date getProject_end() {
+		return project_end;
+	}
+	public void setProject_end(Date project_end) {
+		this.project_end = project_end;
+	}
+	
+	
+}

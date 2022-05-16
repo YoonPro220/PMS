@@ -1,0 +1,23 @@
+package pms.a01_mvc.a01_controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+
+
+@Controller
+public class MyjobController {
+//	@Autowired
+//	private MyjobService service;
+	
+	// 내업무보기 페이지 호출
+	// http://localhost:5080/pms/myjob.do
+	@RequestMapping("/myjobList.do")
+	public String myjobList() {
+		
+		return "WEB-INF\\views\\a03_myJob.jsp";
+	}
+	
+	
+}

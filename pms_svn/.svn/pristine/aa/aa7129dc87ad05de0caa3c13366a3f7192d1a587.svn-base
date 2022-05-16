@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="pms.a01_mvc.a03_dao.GanttDao">
+
+	<!-- 
+	public List<Ganttdata> getGanttList();
+	 -->
+	<resultMap type="gantt" id="ganttResult">
+		<result property="open" column="open1"/>
+	</resultMap> 
+	<select id="getGanttList" resultMap="ganttResult">
+		select * from Ganttdata
+	</select>
+	 
+	 
+
+	
+</mapper>

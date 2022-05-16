@@ -1,0 +1,67 @@
+package pms.a01_mvc.a01_controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import pms.a01_mvc.a02_service.MeetingService;
+import pms.a02_vo.Meeting;
+
+
+@Controller
+public class MeetingController {
+	@Autowired
+	private MeetingService service;
+	
+	//http://localhost:5080/pms/meetingList.do
+	@RequestMapping("/meetingList.do")
+	public String meetingList(Meeting sch, Model d) {
+		//d.addAttribute("meetinglist", service.getMeetingList(sch));
+		return "WEB-INF\\views\\a04_meeting.jsp";
+	}
+	
+	// 회의일지 상세
+	@RequestMapping("/meetingdetail.do")
+	public String meetingdetail(@RequestParam("meeting_list_num") int meeting_list_num, Model d) {
+		System.out.println("상세meeting_list_num:"+meeting_list_num);
+		d.addAttribute("meeting", service.getMeetingnum(meeting_list_num));
+		
+		return "WEB-INF\\views\\a10_metting_detail.jsp";
+	}
+	
+	// 회의일지 수정  
+	@RequestMapping("/uptMeeting.do")
+	public String uptMeeting(Meeting upt, Model d){
+		d.addAttribute("proc","수정완료");
+		service.uptMeeting(upt);		
+		return "forward:/meetingdetail.do";
+	}
+	
+	
+	// 회의일지 삭제
+	@RequestMapping("/delMeeting.do")
+	public String delMeeting(@RequestParam("meeting_list_num") int meeting_list_num, Model d){
+		d.addAttribute("proc","삭제되었습니다");
+		service.delMeeting(meeting_list_num);
+		return "WEB-INF\\views\\a10_metting_detail.jsp";
+	}
+	
+	// 사용자 등록
+	@RequestMapping("/insertMeeting.do")
+	public String insertMeeting(Meeting ins, Model d) {
+		d.addAttribute("proc", "등록완료");
+		service.insertMeeting(ins);
+		return "WEB-INF\\views\\a04_meeting.jsp";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="pms.a01_mvc.a03_dao.MyjobDao">
+	<!-- 내업무 목록 -->
+	<select id="getMyjobList" resultType="myjob" parameterType="myjob">
+		select *
+		from myjob
+		ORDER BY myjob_list_num desc
+	</select>
+	
+	<select id="getMyjobDetail" parameterType="int" resultType="myjob">
+		select *
+		from myjob
+		where myjob_list_num=#{myjob_list_num}
+		
+	</select> 
+		
+</mapper>

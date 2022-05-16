@@ -1,0 +1,81 @@
+package pms.a02_vo;
+//pms.a02_vo.MeetingList
+import java.util.Date;
+
+public class MeetingList {
+
+	private int meeting_list_num;
+	private String meeting_name;
+	private String meeting_text;
+	private String project_name;
+	private String dname;
+	private String name;
+	private Date project_start;
+	private Date project_end;
+	public MeetingList() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public MeetingList(int meeting_list_num, String meeting_name, String meeting_text, String project_name,
+			String dname, String name, Date project_start, Date project_end) {
+		super();
+		this.meeting_list_num = meeting_list_num;
+		this.meeting_name = meeting_name;
+		this.meeting_text = meeting_text;
+		this.project_name = project_name;
+		this.dname = dname;
+		this.name = name;
+		this.project_start = project_start;
+		this.project_end = project_end;
+	}
+	public int getMeeting_list_num() {
+		return meeting_list_num;
+	}
+	public void setMeeting_list_num(int meeting_list_num) {
+		this.meeting_list_num = meeting_list_num;
+	}
+	public String getMeeting_name() {
+		return meeting_name;
+	}
+	public void setMeeting_name(String meeting_name) {
+		this.meeting_name = meeting_name;
+	}
+	public String getMeeting_text() {
+		return meeting_text;
+	}
+	public void setMeeting_text(String meeting_text) {
+		this.meeting_text = meeting_text;
+	}
+	public String getProject_name() {
+		return project_name;
+	}
+	public void setProject_name(String project_name) {
+		this.project_name = project_name;
+	}
+	public String getDname() {
+		return dname;
+	}
+	public void setDname(String dname) {
+		this.dname = dname;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Date getProject_start() {
+		return project_start;
+	}
+	public void setProject_start(Date project_start) {
+		this.project_start = project_start;
+	}
+	public Date getProject_end() {
+		return project_end;
+	}
+	public void setProject_end(Date project_end) {
+		this.project_end = project_end;
+	}
+	
+	
+}

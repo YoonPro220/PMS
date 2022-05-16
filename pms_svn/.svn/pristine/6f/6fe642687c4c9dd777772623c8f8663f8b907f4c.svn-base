@@ -1,0 +1,17 @@
+package pms.a01_mvc.a01_controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class ProjectController {
+//	@Autowired
+//	private ProjectService service;
+	
+	@RequestMapping("/projectList.do")
+	public String projectList() {
+		
+		return "WEB-INF\\views\\a13_pj_list.jsp";
+	}
+	
+}

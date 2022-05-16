@@ -1,0 +1,37 @@
+package pms.a01_mvc.a02_service;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
+import pms.a01_mvc.a03_dao.NoticeDao;
+import pms.a02_vo.Notice;
+
+@Service
+public class NoticeService {
+	@Autowired
+	private NoticeDao dao;
+	
+	public ArrayList<Notice> getNotice(Notice sch){
+		if(sch.getWriter()==null) sch.setWriter("");
+		return dao.getNotice(sch);
+	}
+	
+	public Notice getNoticenum(int Notice_list_num){
+		return dao.getNoticenum(Notice_list_num);
+	}
+	
+	public void uptNotice(Notice upt){
+		dao.uptNotice(upt);
+	}
+	
+	public void delNotice(int Notice_list_num) {
+		dao.delNotice(Notice_list_num);
+	}
+	
+	public void insertNotice(Notice ins) {
+		dao.insertNotice(ins);
+	}
+}

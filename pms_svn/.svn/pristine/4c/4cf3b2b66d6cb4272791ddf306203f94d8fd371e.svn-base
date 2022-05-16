@@ -1,0 +1,12 @@
+package pms.a01_mvc.a03_dao;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import pms.a02_vo.Gantttasks;
+
+@Repository
+public interface GanttDao {
+	public List<Gantttasks> getGanttList();
+}

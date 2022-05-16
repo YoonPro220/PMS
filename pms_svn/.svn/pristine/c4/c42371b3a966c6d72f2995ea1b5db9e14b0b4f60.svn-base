@@ -1,0 +1,78 @@
+package pms.a02_vo;
+
+import java.util.Date;
+
+
+
+public class Project {
+
+	private int project_list_num;
+	private String project_title;
+	private String writer;
+	private String dname;
+	private Date project_start;
+	private Date project_end;
+	private int project_budget;
+	private String project_manager;
+	private String project_member;
+	
+	
+	
+	public int getProject_budget() {
+		return project_budget;
+	}
+	public void setProject_budget(int project_budget) {
+		this.project_budget = project_budget;
+	}
+	public int getProject_list_num() {
+		return project_list_num;
+	}
+	public void setProject_list_num(int project_list_num) {
+		this.project_list_num = project_list_num;
+	}
+	public String getProject_title() {
+		return project_title;
+	}
+	public void setProject_title(String project_title) {
+		this.project_title = project_title;
+	}
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+	public String getDname() {
+		return dname;
+	}
+	public void setDname(String dname) {
+		this.dname = dname;
+	}
+	public Date getProject_start() {
+		return project_start;
+	}
+	public void setProject_start(Date project_start) {
+		this.project_start = project_start;
+	}
+	public Date getProject_end() {
+		return project_end;
+	}
+	public void setProject_end(Date project_end) {
+		this.project_end = project_end;
+	}
+	public String getProject_manager() {
+		return project_manager;
+	}
+	public void setProject_manager(String project_manager) {
+		this.project_manager = project_manager;
+	}
+	public String getProject_member() {
+		return project_member;
+	}
+	public void setProject_member(String project_member) {
+		this.project_member = project_member;
+	}
+	
+	
+	
+}

@@ -1,0 +1,21 @@
+package pms.a01_mvc.a02_service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import pms.a01_mvc.a03_dao.MainDao;
+import pms.a02_vo.PmsMember;
+
+@Service
+public class MainService {
+
+	@Autowired
+	private MainDao dao;
+	
+	public PmsMember mypage(PmsMember mypage) {
+		return dao.mypage(mypage);
+	}
+	public void updateMember(PmsMember upt) {
+		dao.updateMember(upt);
+	}
+}

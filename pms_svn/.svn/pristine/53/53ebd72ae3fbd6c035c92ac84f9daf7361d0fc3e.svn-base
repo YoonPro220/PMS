@@ -1,0 +1,88 @@
+package pms.a02_vo;
+
+import java.util.Date;
+
+public class Meeting {
+	private int meeting_list_num;
+	private int meeting_refno;
+	private String meeting_title;
+	private String meeting_content;
+	private String project_name;
+	private String dname;
+	private String writer;
+	private Date meeting_reg;
+	private Date meeting_upt;
+	public Meeting() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Meeting(int meeting_list_num, int meeting_refno, String meeting_title, String meeting_content,
+			String project_name, String dname, String writer, Date meeting_reg, Date meeting_upt) {
+		super();
+		this.meeting_list_num = meeting_list_num;
+		this.meeting_refno = meeting_refno;
+		this.meeting_title = meeting_title;
+		this.meeting_content = meeting_content;
+		this.project_name = project_name;
+		this.dname = dname;
+		this.writer = writer;
+		this.meeting_reg = meeting_reg;
+		this.meeting_upt = meeting_upt;
+	}
+	public int getMeeting_list_num() {
+		return meeting_list_num;
+	}
+	public void setMeeting_list_num(int meeting_list_num) {
+		this.meeting_list_num = meeting_list_num;
+	}
+	public int getMeeting_refno() {
+		return meeting_refno;
+	}
+	public void setMeeting_refno(int meeting_refno) {
+		this.meeting_refno = meeting_refno;
+	}
+	public String getMeeting_title() {
+		return meeting_title;
+	}
+	public void setMeeting_title(String meeting_title) {
+		this.meeting_title = meeting_title;
+	}
+	public String getMeeting_content() {
+		return meeting_content;
+	}
+	public void setMeeting_content(String meeting_content) {
+		this.meeting_content = meeting_content;
+	}
+	public String getProject_name() {
+		return project_name;
+	}
+	public void setProject_name(String project_name) {
+		this.project_name = project_name;
+	}
+	public String getDname() {
+		return dname;
+	}
+	public void setDname(String dname) {
+		this.dname = dname;
+	}
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+	public Date getMeeting_reg() {
+		return meeting_reg;
+	}
+	public void setMeeting_reg(Date meeting_reg) {
+		this.meeting_reg = meeting_reg;
+	}
+	public Date getMeeting_upt() {
+		return meeting_upt;
+	}
+	public void setMeeting_upt(Date meeting_upt) {
+		this.meeting_upt = meeting_upt;
+	}
+	
+	
+}

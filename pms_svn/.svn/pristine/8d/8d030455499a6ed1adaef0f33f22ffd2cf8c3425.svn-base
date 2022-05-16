@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="pms.a01_mvc.a03_dao.GanttDao">
+
+	<!-- 
+	public ArrayList<Gantt> getGantt(int project_id);
+	 -->
+	<select id="getGantt" resultType="gantt" parameterType="int">
+		select *
+		from gantt
+		where project_num = #{project_num}
+	</select>
+	
+	<!-- 
+	public ArrayList<Link> getLink(int id);
+	 -->
+	<select id="getLink" resultType="link" parameterType="int">
+		select *
+		from link
+		where id = #{id}
+	</select>
+	 
+	
+	<!-- 
+	public List<Gantt> getGanttList();
+	 -->
+	<resultMap type="gantt" id="ganttResult">
+		<result property="open" column="open1"/>
+	</resultMap> 
+	<select id="getGanttList" resultMap="ganttResult">
+		select * from gantt
+	</select>
+
+	
+</mapper>

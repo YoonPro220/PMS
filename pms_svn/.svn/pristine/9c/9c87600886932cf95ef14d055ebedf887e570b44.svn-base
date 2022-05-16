@@ -1,0 +1,38 @@
+package pms.a01_mvc.a01_controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import pms.a01_mvc.a02_service.GanttService;
+import pms.a02_vo.Gantt;
+
+@Controller
+public class GanttController {
+	
+	@Autowired
+	private GanttService service;
+	
+	// http://localhost:5080/pms/gantt.do
+	@GetMapping("/gantt.do")
+	public String gantt() {
+		return "\\WEB-INF\\views\\a21_gantt.jsp";
+	}
+	
+	// http://localhost:5080/pms/ganttList.do
+	@RequestMapping("ganttList.do")
+	public String getGanttList(Model d) {
+		d.addAttribute("gantttasks",service.getGantt(1));
+		return "pageJsonReport";
+	}
+	
+	@RequestMapping("ganttAdd.do")
+	public String gannttAdd(Gantt g, Model d) {
+		//service.add(g);
+		d.addAttribute("add","add");
+		
+		return "forward:/ganttList.do";
+	}
+}

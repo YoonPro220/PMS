@@ -1,0 +1,8 @@
+package pms.a01_mvc.a03_dao;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface DashboardDao {
+
+}
